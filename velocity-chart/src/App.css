@@ -30,6 +30,8 @@
 
   width: 80%; 
   height: 500px;
+  position: relative;
+  padding:10px;
 
 }
 
@@ -39,4 +41,34 @@
   border:2px solid #414414;
   border-top-width: 0;
   border-right-width: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap:20px;
+
+}
+
+.y-axis-label{
+  position: absolute;
+  /* 50 % away from the top */
+  top:50%; 
+  left:0;
+  transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+  font-weight: bold;
+  margin-left: -15px;
+}
+.x-axis-label{
+  position: absolute;
+   /* 50 % away from the left */
+  left:50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.bar{
+  flex:1;
+  height: 100%;
+  background-color: red;
 }
