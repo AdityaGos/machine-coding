@@ -70,5 +70,23 @@
 .bar{
   flex:1;
   height: 100%;
-  background-color: red;
+  position: relative;
+}
+
+.tooltip{
+  display: block;
+  position: absolute;
+  top:0;
+  right:50%;
+  transform: translate(50%,-120%);
+  width: max-content;
+  background-color: black;
+  color:white;
+  padding:4px;
+  border-radius: 4px;
+  opacity:0;
+}
+
+.bar:hover .tooltip{
+  opacity:1;
 }
