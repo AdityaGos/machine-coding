@@ -1,5 +1,14 @@
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
+
+const toolButtons =document.querySelectorAll('.tool')
+
+toolButtons.forEach((button)=>{
+button.addEventListener('click',()=>{ 
+    document.querySelector('.options .active').classList.remove('active')
+    button.classList.add('active')
+})
+})
 let isDrawing = false;
 
 window.addEventListener("load", () => {
