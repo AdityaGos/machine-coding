@@ -3,18 +3,21 @@
 // each data item maps to a bar
 
 import React, { useMemo } from "react";
-
+import {motion } from 'framer-motion'
 const Bar = ({ name, height,ticket, colour }) => {
   return (
-    <div
+    <motion.div
       className="bar"
+      initial={{height:0}}
+      animate={{height:`${height}%`}}
+      exit={{height:0}}
       style={{ backgroundColor: colour, height: `${height}%` }}
     >
 
       <div className="tooltip">
         {name} -{ticket}
       </div>
-    </div>
+    </motion.div>
   );
 };
 const BarChart = ({ data }) => {

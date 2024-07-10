@@ -44,7 +44,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  gap:20px;
+  gap:40px;
 
 }
 
@@ -85,6 +85,8 @@
   padding:4px;
   border-radius: 4px;
   opacity:0;
+  z-index: 10;
+  transition:opacity 0.2s ease-in-out
 }
 
 .bar:hover .tooltip{
