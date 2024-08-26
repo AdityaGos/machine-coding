@@ -1,10 +1,12 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { ToastModal } from "./component/ToastModal/ToastModal";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 function App() {
   const [toasts, setToasts] = useState([]);
+
+  const timerRef = useRef({})
 
   function handleAddToast(e) {
     const id = new Date().getTime();
@@ -12,11 +14,18 @@ function App() {
     const message = e.target.dataset.message ? e.target.dataset.message : type;
 
     setToasts((prev) => [...prev, { id, message, type }]);
+
+    timerRef.current[id]=setTimeout(()=>{ handleClose(id)},4000)
   }
 
   function handleClose(id) {
-    const newarray = toasts.filter((item) => item.id !== id);
-    setToasts(newarray);
+    clearTimeout(timerRef.current[id])
+    delete timerRef.current[id]
+    setToasts((prevToasts)=>{
+      const newarray= prevToasts.filter((item) => item.id !== id);
+      return newarray
+    }) 
+
   }
   return (
     <div className="App">
