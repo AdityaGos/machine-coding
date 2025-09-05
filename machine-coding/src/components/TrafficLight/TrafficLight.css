@@ -1,0 +1,29 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.container {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.traffic_light__container {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: aliceblue;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  width: 50px;
+}
+
+.traffic-light {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
