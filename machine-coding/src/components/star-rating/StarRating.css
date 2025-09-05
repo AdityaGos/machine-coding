@@ -1,0 +1,29 @@
+.star-rating{
+    display: flex;
+    padding:10px;
+    margin:20px;
+
+}
+
+.star-rating button{
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.star-rating .active svg{
+    fill:gold;
+    stroke: black;
+}
+.star-rating .hover svg{
+    fill:rgb(0, 255, 64);
+    stroke: black;
+    scale:1.1;
+    transition: all 0.2s ease-in-out;
+}
+
+.star-rating .half svg {
+    fill: gold;
+    stroke: black;
+    clip-path: inset(0 50% 0 0);
+}
